@@ -26,7 +26,7 @@ const UserDetails = () => {
   }
 
   if (!userData) {
-    return <p>Loading user data...</p>;
+    return <p className="text-[#ff742b] flex justify-center text-5xl items-center mt-32">Loading user data...</p>;
   }
   return (
     <div className="max-w-5xl mx-auto bg-[#f6f6ef] h-60 mt-6">

@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Filters = ({ onFilterChange }) => {
-  const [searchBy, setSearchBy] = useState("all");
-  const [sortBy, setSortBy] = useState("popularity");
-  const [timeRange, setTimeRange] = useState("allTime");
+const Filters = ({ onFilterChange,currentFilters }) => {
+  const [searchBy, setSearchBy] = useState(currentFilters.searchBy);
+  const [sortBy, setSortBy] = useState(currentFilters.sortBy);
+  const [timeRange, setTimeRange] = useState(currentFilters.timeRange);
+
+  useEffect(() => {
+    setSearchBy(currentFilters.searchBy);
+    setSortBy(currentFilters.sortBy);
+    setTimeRange(currentFilters.timeRange);
+  }, [currentFilters]);
 
   const handleSearchByChange = (e) => {
     setSearchBy(e.target.value);

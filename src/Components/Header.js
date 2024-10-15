@@ -2,20 +2,21 @@ import { useState } from "react";
 import HackerLogo from '../Assets/HackerLogo.png'
 import { IoSettingsOutline,IoSearchOutline } from "react-icons/io5"
 
-const Header = ({ onSearch }) => {
-  const [searchQuery, setSearchQuery] = useState("");
+const Header = ({ onSearch,searchQuery }) => {
+  // const [searchQuery, setSearchQuery] = useState("");
+  const [inputValue, setInputValue] = useState(searchQuery || "");
 
   const handleInputChange = (e) => {
-    setSearchQuery(e.target.value)
+    setInputValue(e.target.value)
     onSearch(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(searchQuery);
+    onSearch(inputValue);
   };
 
   return (
-    <header className="bg-[#ff742b] h-14">
+    <div className="bg-[#ff742b] h-14">
       <div className="flex gap-4">
         <div className="flex row gap-1 mt-1 mx-4 px-2">
           <img className="w-10" src={HackerLogo} alt="logo"/>
@@ -27,7 +28,7 @@ const Header = ({ onSearch }) => {
               <IoSearchOutline className="absolute mt-2 ml-1 text-[#ff742b] w-10 h-6"/>
             <input
                type="text"
-               value={searchQuery}
+               value={inputValue}
                className="w-full h-10 pl-12 outline-none"
                placeholder="Search stories by title , url or author"
                onChange={handleInputChange}
@@ -40,7 +41,7 @@ const Header = ({ onSearch }) => {
         <IoSettingsOutline className="h-8 w-7 mt-2 ml-32" />
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 export default Header;
