@@ -15,7 +15,7 @@ const ItemList = ({
 }) => {
 
   const highlightText = (text, query) => {
-    if (!query) return text;
+    if (!text) return "";
     if (!query) return text;
     const parts = text.split(new RegExp(`(${query})`, 'gi'));
     return parts.map((part, index) => 
