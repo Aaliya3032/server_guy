@@ -72,3 +72,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ###Vercel Link
 https://server-guy.vercel.app/
+###Credentials
+email:- email@gmail.com
+Password :- Password1234*
