@@ -22,8 +22,8 @@ function App() {
 
   return (
    <Routes>
-    <Route path="/" element={isAuthenticated ? <Home/>  : <Login/> }/>
-    <Route path="/home" element={isAuthenticated ? <Home/>  : <Login/> }/>
+    <Route path="/no" element={isAuthenticated ? <Home/>  : <Login/> }/>
+    <Route path="/" element={isAuthenticated ? <Home/>  : <Home/> }/>
     <Route path="/user/:username" element={<UserDetails />} />
    </Routes>
   );

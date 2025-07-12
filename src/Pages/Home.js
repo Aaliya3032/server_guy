@@ -105,7 +105,6 @@ const Home = () => {
         searchQuery={searchQuery}
         onFilterChange={handleFilterChange}
       />
-      <LogoutBtn />
     </div>
   );
 };
